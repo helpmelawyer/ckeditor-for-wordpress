@@ -7,7 +7,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 class ckeditor_wordpress {
 
 	private static $instance;
-	public $version = '4.5.3.3';
+	public $version = '4.5.9';
 	public $timestamp = 'F7J8';
 	public $default_options = array();
 	public $options = array();
@@ -1128,7 +1128,7 @@ final class _WP_Editors {
 			if ('html' == wp_default_editor()) {
 				add_filter('the_editor_content', 'wp_htmledit_pre');
 			} else {
-				add_filter('the_editor_content', 'wp_richedit_pre');
+				add_filter('the_editor_content', 'format_for_editor');
 				$switch_class = 'tmce-active';
 			}
 
